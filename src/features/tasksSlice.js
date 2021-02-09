@@ -25,8 +25,7 @@ const tasksSlice = createSlice({
             });
         },
         filterTasks: (state, action) => {
-            console.log(action.payload);
-            state.filterTasks = state.projectTasks.filter(task => task.Task_name === action.payload);
+            state.filterTasks = state.projectTasks.filter(task => task.Task_name.includes(action.payload));
             state.filterName = action.payload;
         },
     }

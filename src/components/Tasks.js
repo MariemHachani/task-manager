@@ -18,14 +18,27 @@ const Tasks = () => {
 
     }, []);
     return (
-        <div>
+        <div className="container">
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Task Name</th>
+                        <th scope="col">Asignees</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">due date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filter_name ? filter_tasks.map((task) => (
+                        <Task key={task.id} task={task}></Task>
+                    )) : project_tasks.map((task) => (
+                        <Task key={task.id} task={task}></Task>
 
-            {filter_name ? filter_tasks.map((task) => (
-                <Task key={task.id} task={task}></Task>
-            )) : project_tasks.map((task) => (
-                <Task key={task.id} task={task}></Task>
+                    ))}
+                </tbody>
+            </table>
 
-            ))}
+
 
         </div>
     )

@@ -3,15 +3,15 @@ import React from 'react'
 const Client = ({ client }) => {
     return (
         <div>
-            <h3>
-                {client.client_name}
-            </h3>
-            <h3>
-                {client.client_surname}
-            </h3>
-            <h3>
-                {client.client_number}
-            </h3>
+            <h4>
+                Nom: {client.client_name}
+            </h4>
+            <h4>
+                Prénom: {client.client_surname}
+            </h4>
+            <h4>
+                Tél: {client.client_number}
+            </h4>
         </div>
     )
 }

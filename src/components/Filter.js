@@ -9,7 +9,8 @@ const Filter = () => {
     const hanleChange = (e) => {
         setFilter(e.target.value);
         console.log(filter);
-
+        dispatch(filterTasks(filter));
+        console.log(filter_tasks);
     };
     const updateList = () => {
 
@@ -17,9 +18,15 @@ const Filter = () => {
         console.log(filter_tasks);
     };
     return (
-        <div>
-            <input type="text" value={filter} onChange={hanleChange}></input>
-            <button onClick={updateList}>Search</button>
+        <div className="row">
+            <div className="col-md-4">
+                <input className="form-control" type="text" value={filter} onChange={hanleChange}></input>
+
+            </div>
+            <div className="col-md-4">
+                <button className="btn btn-primary" onClick={updateList}>Search</button>
+
+            </div>
         </div>
     )
 }

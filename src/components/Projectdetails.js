@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectProjectInfo } from '../features/tasksSlice';
 import Client from './Client';
-import './Project.css';
 
 
 const Projectdetails = () => {
@@ -17,7 +16,7 @@ const Projectdetails = () => {
     }, [project_details]);
     return (
         <div className="container">
-            <div className="row">
+            <div className="row text-center">
                 <div className="col-md-12">
                     {projTitle ?
                         <h1>{projTitle}</h1>
@@ -26,10 +25,11 @@ const Projectdetails = () => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-8"></div>
+                <div className="col-md-4">
                     {projClient ?
                         <Client client={projClient}></Client>
-                        : <h1>NO title mentioned </h1>}
+                        : <h3>NO title mentioned </h3>}
                 </div>
             </div>
 

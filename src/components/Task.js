@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 const Task = ({ task }) => {
     const [priority, setPriority] = useState("");
+    const [dateObject, setdateObject] = useState("");
+
     useEffect(() => {
         if (task.Priority === 1) {
             setPriority('Critical');
@@ -18,11 +20,20 @@ const Task = ({ task }) => {
                 }
             }
         }
+        const unixTimestamp = task.Due_date;
+
+        const milliseconds = unixTimestamp * 1000;
+        setdateObject(Date(milliseconds));
     }, [priority]);
     return (
-        <div>
-            <p >{task.Task_name} - {task.assigness} - {priority} </p>
-        </div>
+        <tr>
+
+            <td>{task.Task_name}</td>
+            <td>{task.assigness} </td>
+            <td>{priority} </td>
+            <td>{dateObject}</td>
+
+        </tr>
     )
 }
 
